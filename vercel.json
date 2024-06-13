@@ -9,8 +9,8 @@
     { "src": "/controller/(.*)", "dest": "/controller/$1" },
     { "src": "/view/component/(.*)", "dest": "/view/component/$1" },
     { "src": "/view/html/(.*)", "dest": "/view/html/$1" },
-    { "src": "/assets/css/(.*)", "dest": "/api/assets/css/$1" },
-    { "src": "/assets/js/(.*)", "dest": "/api/assets/js/$1" },
+    { "src": "/assets/css/(.*)", "dest": "/assets/css/$1" },
+    { "src": "/assets/js/(.*)", "dest": "/assets/js/$1" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
