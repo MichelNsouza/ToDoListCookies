@@ -1,3 +1,2 @@
 <?php
-echo "aqui";
-require_once(__DIR__ .'/index.php');
+require_once('../index.php');
