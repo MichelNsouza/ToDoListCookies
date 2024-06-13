@@ -5,13 +5,11 @@
       { "src": "/**", "use": "@vercel/static" }
   ],
   "routes": [
-      {
-          "src": "/(css|js|images)/(.*)",
-          "dest": "assets/$1/$2"
-      },
-      {
-          "src": "/(.*)",
-          "dest": "/api/index.php"
-      }
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/controller/(.*)", "dest": "/controller/$1" },
+    { "src": "/view/component/(.*)", "dest": "/view/component/$1" },
+    { "src": "/view/html/(.*)", "dest": "/view/html/$1" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.php" }
   ]
 }
