@@ -4,6 +4,7 @@ $baseDir = dirname(__DIR__);
 
 require_once $baseDir . '/controller/processamento.php';
 require_once $baseDir . '/routes/routes.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

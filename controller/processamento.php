@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($acao === 'excluir') {
         $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
         excluirTarefa($id);
-        header('Location: /index');
+        header('Location: /');
     }
 
 

@@ -3,7 +3,7 @@
 $uri = $_SERVER['REQUEST_URI'];
 
 switch ($uri) {
-    case '/index':
+    case '/':
         $paginaAtual = '/index.php';
         break;
 
