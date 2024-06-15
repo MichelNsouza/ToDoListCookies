@@ -5,6 +5,10 @@ function adicionarTarefa($titulo, $data) {
         return;
     }
 
+
+    $dataformatada = new DateTime($data);
+    $data =$dataformatada->format('d/m/Y');
+    
     $id = count($_SESSION['todasTarefas']) + 1;
     $tarefa = [
         "id" => $id,
