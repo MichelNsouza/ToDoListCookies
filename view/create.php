@@ -1,20 +1,5 @@
-<?php
-session_start();
-$baseDir = dirname(__DIR__);
-include $baseDir . '/view/html/head.php'
-?>
-
-<link href="../assets/style.css" rel="stylesheet">
-    <title>ToDo List</title>
-</head>
-<body>
-  
-  <?php include $baseDir . '/view/component/navbar.php' ?>
-  
-  <div class="container-md mt-5">
-    
     <h2 class="text-primary mb-4">Nova Tarefa</h2>
-    
+
     <?php include $baseDir . '/view/component/alert.php' ?>
 
     <form method="post" action="../controller/processamento.php">
@@ -32,9 +17,3 @@ include $baseDir . '/view/html/head.php'
       </div>
       </div>
     </form>
-    
-  </div>
-  
-  <?php include $baseDir . '/view/component/footer.php' ?>
-  <?php include $baseDir . '/view/html/foot.php' ?>
-

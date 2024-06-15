@@ -5,6 +5,7 @@
   </div>
 
 <?php endif; ?>
+
 <?php unset($_SESSION['alert_message']); 
-unset($_SESSION['alert_type']);
+  unset($_SESSION['alerta_type']);
 ?>

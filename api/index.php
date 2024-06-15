@@ -2,46 +2,34 @@
 
 $baseDir = dirname(__DIR__);
 
-include $baseDir . '/controller/processamento.php';
-include $baseDir . '/view/html/head.php';
+require_once $baseDir . '/controller/processamento.php';
+require_once $baseDir . '/routes/routes.php';
 ?>
-<link href="/api/assets/css/style.css" rel="stylesheet">
-<title>ToDo List</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/../assets/css/style.css" rel="stylesheet">
+    <title>ToDo List</title>
 </head>
+
 <body>
 
-<?php include $baseDir . '/view/component/navbar.php'; ?>
+    <?php include $baseDir . '/view/component/navbar.php'; ?>
 
-<div class="container-md mt-5">
-    <h2 class="text-primary mb-4">Tarefas Cadastradas</h2>
+    <div class="container-md mt-5">
 
-    <?php include $baseDir . '/view/component/alert.php'; ?>
+        <?php include $baseDir . "/view/{$paginaAtual}" ?>
 
-    <div class="row border-bottom secondary-subtle mt-2">
-        <div class="col fw-bold">#</div>
-        <div class="col fw-bold">Tarefa</div>
-        <div class="col fw-bold">Data</div>
-        <div class="col fw-bold">Ação</div>
     </div>
 
-    <?php if (isset($_SESSION['todasTarefas']) && is_array($_SESSION['todasTarefas'])): ?>
-        <?php foreach($_SESSION['todasTarefas'] as $tarefa): ?>
-        <div class="row border-bottom secondary-subtle mt-2">
-            <div class="col fw-bold"><?=$tarefa["id"];?></div>
-            <div class="col"><?=$tarefa["tarefa"];?></div>
-            <div class="col"><?=$tarefa["data"];?></div>
-            <div class="col">
-                <form method="POST" action="" style="display:inline;">
-                    <input type="hidden" name="acao" value="excluir">
-                    <input type="hidden" name="id" value="<?=$tarefa["id"];?>">
-                    <button class="btn btn-danger" type="submit">Excluir</button>
-                </form>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+    <?php include $baseDir . '/view/component/footer.php'; ?>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
 
-<?php include $baseDir . '/view/component/footer.php'; ?>
-<?php include $baseDir . '/view/html/foot.php'; ?>
+</html>
